@@ -19,5 +19,4 @@ export class TableProdutosComponent implements OnInit {
       this.produtos = res.data;
     });
   }
-
 }

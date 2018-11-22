@@ -10,7 +10,7 @@ import { Produto } from './produto';
 })
 export class ProdutoService {
 
-  path: string = "/produtos";
+  path: string = "/produtos/";
 
   constructor(private http: HttpClient) { }
 
@@ -20,8 +20,20 @@ export class ProdutoService {
     return this.http.get<any>(this.getPath());
   }
 
+  buscarProduto(id: number): Observable<any> {
+    return this.http.get(this.getPath(id.toString()));
+  }
+
   salvarProduto(produto: Produto): Observable<any> {
     return this.http.post<Produto>(this.getPath(), produto);
+  }
+
+  atualizarProduto(id:number, produto: Produto): Observable<any> {
+    return this.http.put<Produto>(this.getPath(id.toString()), produto);
+  }
+
+  apagarProduto(id:number): Observable<any> {
+    return this.http.delete(this.getPath(id.toString()));
   }
 
   private getPath(addPath = '') {
