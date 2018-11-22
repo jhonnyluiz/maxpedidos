@@ -26,15 +26,15 @@ public class Resposta {
 		return new Resposta(data);
 	}
 
-	public static Resposta objetoCriado(Object data) {
+	public static Resposta objCriado(Object data) {
 		return new Resposta(data).addSucesso("Objeto criado com sucesso!");
 	}
 
-	public static Resposta objetoAtualizado(Object data) {
+	public static Resposta objAtualizado(Object data) {
 		return new Resposta(data).addSucesso("Objeto atualizado com sucesso!");
 	}
 
-	public static Resposta objetoApagado() {
+	public static Resposta objApagado() {
 		return new Resposta().addSucesso("Objeto apagado com sucesso!");
 	}
 

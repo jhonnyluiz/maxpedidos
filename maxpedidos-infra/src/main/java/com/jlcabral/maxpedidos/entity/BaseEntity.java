@@ -32,6 +32,8 @@ public abstract class BaseEntity implements Serializable {
 	@LastModifiedDate
 	private Date updatedAt;
 
+	public abstract BaseEntity atualizarCampos(BaseEntity obj);
+
 	protected Date getCreatedAt() {
 		return createdAt;
 	}

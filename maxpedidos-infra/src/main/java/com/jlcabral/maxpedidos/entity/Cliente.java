@@ -53,4 +53,11 @@ public class Cliente extends BaseEntity {
 		this.razaoSocial = razaoSocial;
 	}
 
+	@Override
+	public BaseEntity atualizarCampos(BaseEntity obj) {
+		this.email = ((Cliente) obj).getEmail();
+		this.razaoSocial = ((Cliente) obj).getRazaoSocial();
+		return this;
+	}
+
 }

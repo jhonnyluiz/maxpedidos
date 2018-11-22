@@ -37,7 +37,7 @@ public class ItemPedido extends BaseEntity {
 	@JoinColumn(name = "produtos_id")
 	@NotNull
 	private Produto produto;
-	
+
 	public ItemPedido() {
 	}
 
@@ -67,5 +67,30 @@ public class ItemPedido extends BaseEntity {
 
 	public Double getPrecoTotal() {
 		return this.quantidade * this.precoUnitario;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+	@Override
+	public BaseEntity atualizarCampos(BaseEntity obj) {
+		this.pedido = ((ItemPedido) obj).getPedido();
+		this.precoUnitario = ((ItemPedido) obj).getPrecoUnitario();
+		this.produto = ((ItemPedido) obj).getProduto();
+		this.quantidade = ((ItemPedido) obj).getQuantidade();
+		return this;
 	}
 }

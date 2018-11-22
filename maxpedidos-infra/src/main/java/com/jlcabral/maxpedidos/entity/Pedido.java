@@ -26,7 +26,7 @@ public class Pedido extends BaseEntity {
 
 	public Pedido() {
 	}
-	
+
 	public Date getData() {
 		return getCreatedAt();
 	}
@@ -49,6 +49,12 @@ public class Pedido extends BaseEntity {
 
 	public void setItensPedido(List<ItemPedido> itensPedido) {
 		this.itensPedido = itensPedido;
+	}
+
+	@Override
+	public BaseEntity atualizarCampos(BaseEntity obj) {
+		this.itensPedido = ((Pedido) obj).getItensPedido();
+		return this;
 	}
 
 }

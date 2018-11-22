@@ -25,13 +25,13 @@ public class Produto extends BaseEntity {
 	@Column
 	@NotNull
 	private Double preco;
-	
+
 	public Produto() {
 	}
-	
-	public Produto atualizarCampos(Produto p) {
-		this.descricao = p.getDescricao();
-		this.preco = p.getPreco();
+
+	public BaseEntity atualizarCampos(BaseEntity obj) {
+		this.descricao = ((Produto) obj).getDescricao();
+		this.preco = ((Produto) obj).getPreco();
 		return this;
 	}
 
