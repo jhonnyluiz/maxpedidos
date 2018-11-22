@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+}
+
+.content {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}
+.acoes {
+    width: 100px;
+}
+
+td > button {
+    margin-right: 15px;
+}
